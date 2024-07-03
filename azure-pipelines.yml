@@ -67,7 +67,7 @@ stages:
       artifact: drop
   
 - stage: 'Dev'
-  displayName: 'Deploy to the dev environment'
+  displayName: 'Deploy to the dev environment dev'
   dependsOn: Build
   condition:  succeeded()
   jobs:
@@ -111,7 +111,7 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure App Service Deploy: staging website'
             inputs:
-              azureSubscription: 's3demo1'
+              azureSubscription: 'Visual Studio Enterprise Subscription(8300c34d-b2b9-486f-9bc0-6dbe96371909)'
               appType: 'webAppLinux'
               appName: '$(WebAppNameStaging)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
