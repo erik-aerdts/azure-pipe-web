@@ -88,8 +88,9 @@ stages:
             inputs:
               azureSubscription: 'Visual Studio Enterprise Subscription(8300c34d-b2b9-486f-9bc0-6dbe96371909)'
               appType: 'webAppLinux'
-              appName: 'tailspin-space-game-web-staging-s3demo1'
-              package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+              appName: '$(WebAppNameDev)'
+              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+
         
 - stage: 'Staging'
   displayName: 'Deploy to the staging environment'
