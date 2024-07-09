@@ -86,7 +86,7 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure App Service Deploy: dev website'
             inputs:
-              azureSubscription: 'Visual Studio Enterprise Subscription(2)(8300c34d-b2b9-486f-9bc0-6dbe96371909)'
+              azureSubscription: 'Visual Studio Enterprise Subscription(1)(8300c34d-b2b9-486f-9bc0-6dbe96371909)'
               appType: 'webAppLinux'
               appName: 'tailspin-space-game-web-dev-s3demo1'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
@@ -109,7 +109,7 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure App Service Deploy: staging website'
             inputs:
-              azureSubscription: 'Visual Studio Enterprise Subscription(1)(8300c34d-b2b9-486f-9bc0-6dbe96371909)'
+              azureSubscription: 'Visual Studio Enterprise Subscription(2)(8300c34d-b2b9-486f-9bc0-6dbe96371909)'
               appType: 'webAppLinux'
               appName: 'tailspin-space-game-web-staging-s3demo1'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
